@@ -129,6 +129,9 @@ var skinNameDict = {
 	},
 	"raptor":{
 		"raptor":{"costIRL":-1,"costCoins":100},
+		"toxic":{"costIRL":1,"costCoins":100},
+		"angel":{"costIRL":1,"costCoins":100},
+		"midnight":{"costIRL":1,"costCoins":100},
 	},
 	"pistol":{
 		"pistol":{"costIRL":-1,"costCoins":100},
