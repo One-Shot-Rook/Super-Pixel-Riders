@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="DejaVu"
+config/name="SuperPixelRiders"
 run/main_scene="res://Scenes/MenuScene.tscn"
 config/icon="res://icon.png"
 
