@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Road.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Runway.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://Scripts/objFire.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Guns/img_sniper.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sounds/snd_theme3.wav" type="AudioStream" id=9]
+[ext_resource path="res://Scripts/btnPause.gd" type="Script" id=10]
 [ext_resource path="res://Assets/img_health.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/prgHealth.gd" type="Script" id=14]
 [ext_resource path="res://Assets/img_safe.png" type="Texture" id=15]
@@ -314,14 +315,24 @@ texture = ExtResource( 15 )
 [node name="sprCenter" type="Sprite" parent="areaMove"]
 texture = ExtResource( 6 )
 
-[node name="prgHealth" type="TextureProgress" parent="." groups=[
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+margin_left = 20.0
+margin_top = 10.0
+margin_right = -20.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="prgHealth" type="TextureProgress" parent="HBoxContainer" groups=[
 "healthUI",
 ]]
-margin_left = 6.0
-margin_top = 10.0
-margin_right = 1068.0
-margin_bottom = 101.0
+margin_right = 877.0
+margin_bottom = 90.0
 mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 value = 100.0
 texture_under = ExtResource( 13 )
 texture_progress = ExtResource( 13 )
@@ -333,6 +344,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="btnPause" type="Button" parent="HBoxContainer"]
+pause_mode = 2
+margin_left = 881.0
+margin_right = 1040.0
+margin_bottom = 90.0
+theme = ExtResource( 3 )
+text = "Pause"
+script = ExtResource( 10 )
+
 [node name="sndTheme" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 volume_db = -10.0
@@ -342,3 +362,4 @@ autoplay = true
 [connection signal="input_event" from="areaAttack/contFire/objFire2/sprWeapon/btnFire" to="areaAttack/contFire/objFire2" method="_on_btnFire_input_event"]
 [connection signal="input_event" from="areaAttack/contFire/objFire3/sprWeapon/btnFire" to="areaAttack/contFire/objFire3" method="_on_btnFire_input_event"]
 [connection signal="input_event" from="areaMove" to="areaMove" method="_on_areaMove_input_event"]
+[connection signal="pressed" from="HBoxContainer/btnPause" to="HBoxContainer/btnPause" method="_on_btnPause_pressed"]

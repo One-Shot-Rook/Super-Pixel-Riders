@@ -1,0 +1,98 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ThemeMain.tres" type="Theme" id=1]
+[ext_resource path="res://Scripts/pausePopup.gd" type="Script" id=2]
+
+[node name="pausePopup" type="PopupPanel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -180.0
+margin_bottom = -1912.0
+rect_min_size = Vector2( 900, 1200 )
+theme = ExtResource( 1 )
+popup_exclusive = true
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vbox" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 40.0
+margin_top = 20.0
+margin_right = -40.0
+margin_bottom = -20.0
+custom_constants/separation = 24
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="labTitle" type="Label" parent="vbox"]
+margin_right = 820.0
+margin_bottom = 81.0
+size_flags_horizontal = 5
+text = "Game Paused"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="vbox"]
+margin_top = 105.0
+margin_right = 820.0
+margin_bottom = 345.0
+rect_min_size = Vector2( 0, 240 )
+
+[node name="labCurrentMoney" type="Label" parent="vbox"]
+margin_top = 369.0
+margin_right = 820.0
+margin_bottom = 450.0
+text = "current Money"
+align = 1
+valign = 1
+
+[node name="labTotalMoney" type="Label" parent="vbox"]
+margin_top = 474.0
+margin_right = 820.0
+margin_bottom = 555.0
+text = "total Money"
+align = 1
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="vbox"]
+margin_top = 579.0
+margin_right = 820.0
+margin_bottom = 819.0
+rect_min_size = Vector2( 0, 240 )
+
+[node name="btnResume" type="Button" parent="vbox"]
+margin_left = 260.0
+margin_top = 843.0
+margin_right = 560.0
+margin_bottom = 932.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Resume"
+
+[node name="btnSettings" type="Button" parent="vbox"]
+margin_left = 260.0
+margin_top = 956.0
+margin_right = 560.0
+margin_bottom = 1045.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Settings"
+
+[node name="btnQuit" type="Button" parent="vbox"]
+margin_left = 260.0
+margin_top = 1069.0
+margin_right = 560.0
+margin_bottom = 1158.0
+rect_min_size = Vector2( 300, 0 )
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Quit"
+[connection signal="about_to_show" from="." to="." method="_on_pausePopup_about_to_show"]
+[connection signal="pressed" from="vbox/btnResume" to="." method="_on_btnResume_pressed"]
+[connection signal="pressed" from="vbox/btnQuit" to="." method="_on_btnQuit_pressed"]
