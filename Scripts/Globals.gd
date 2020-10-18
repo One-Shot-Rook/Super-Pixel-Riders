@@ -121,6 +121,7 @@ var skinNameDict = {
 	},
 	"dallas":{
 		"dallas":{"costIRL":-1,"costCoins":100},
+		"impostor":{"costIRL":1,"costCoins":100}
 	},
 	"goliath":{
 		"goliath":{"costIRL":-1,"costCoins":100},
