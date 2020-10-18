@@ -169,6 +169,7 @@ margin_right = -10.0
 margin_bottom = -10.0
 texture_progress = ExtResource( 11 )
 fill_mode = 5
+nine_patch_stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -234,6 +235,7 @@ margin_right = -10.0
 margin_bottom = -10.0
 texture_progress = ExtResource( 11 )
 fill_mode = 5
+nine_patch_stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -300,6 +302,7 @@ margin_right = -10.0
 margin_bottom = -10.0
 texture_progress = ExtResource( 11 )
 fill_mode = 5
+nine_patch_stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
