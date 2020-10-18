@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Road.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Runway.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Assets/Guns/img_sniper.png" type="Texture" id=8]
 [ext_resource path="res://Assets/Sounds/snd_theme3.wav" type="AudioStream" id=9]
 [ext_resource path="res://Scripts/btnPause.gd" type="Script" id=10]
+[ext_resource path="res://Assets/img_reload_prg.png" type="Texture" id=11]
 [ext_resource path="res://Assets/img_health.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/prgHealth.gd" type="Script" id=14]
 [ext_resource path="res://Assets/img_safe.png" type="Texture" id=15]
@@ -93,6 +94,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="reloadPrg" type="TextureProgress" parent="areaAttack/contFire/objFire0"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_progress = ExtResource( 11 )
+fill_mode = 5
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="sprWeapon" type="TextureRect" parent="areaAttack/contFire/objFire0"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -144,6 +159,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 slot = 1
+
+[node name="reloadPrg" type="TextureProgress" parent="areaAttack/contFire/objFire1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_progress = ExtResource( 11 )
+fill_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="sprWeapon" type="TextureRect" parent="areaAttack/contFire/objFire1"]
 anchor_right = 1.0
@@ -197,6 +225,19 @@ __meta__ = {
 }
 slot = 2
 
+[node name="reloadPrg" type="TextureProgress" parent="areaAttack/contFire/objFire2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_progress = ExtResource( 11 )
+fill_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="sprWeapon" type="TextureRect" parent="areaAttack/contFire/objFire2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -249,6 +290,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 slot = 3
+
+[node name="reloadPrg" type="TextureProgress" parent="areaAttack/contFire/objFire3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+texture_progress = ExtResource( 11 )
+fill_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="sprWeapon" type="TextureRect" parent="areaAttack/contFire/objFire3"]
 anchor_right = 1.0

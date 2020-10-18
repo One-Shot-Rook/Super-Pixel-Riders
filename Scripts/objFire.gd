@@ -15,7 +15,9 @@ func _ready():
 func updateUI(slots):
 	if gunName == "empty":
 		return
-	$sprWeapon.modulate = Color(1,1,1) * (1-slots[gunName]["timer"].time_left/slots[gunName]["timer"].wait_time)
+	#$sprWeapon.modulate = Color(1,1,1) * (1-slots[gunName]["timer"].time_left/slots[gunName]["timer"].wait_time)
+	$reloadPrg.max_value = 360
+	$reloadPrg.value = (slots[gunName]["timer"].time_left/slots[gunName]["timer"].wait_time)*360
 	$labAmmo.text = str(slots[gunName]["ammo"])
 
 func _on_btnFire_input_event(_viewport, event, _shape_idx):

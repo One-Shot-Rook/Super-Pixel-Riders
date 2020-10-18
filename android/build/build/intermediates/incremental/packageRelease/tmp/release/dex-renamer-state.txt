@@ -1,4 +1,4 @@
-#Thu Oct 15 17:45:38 CEST 2020
-base.0=C\:\\Users\\Ovidiu\\Documents\\Godot\\Godot Projects\\DejaVu\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\out\\classes.dex
+#Sun Oct 18 19:29:19 CEST 2020
+base.0=C\:\\Users\\Ovidiu\\Documents\\Godot\\Godot Projects\\SuperPixelRiders\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
