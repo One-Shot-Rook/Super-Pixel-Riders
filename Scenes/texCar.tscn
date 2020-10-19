@@ -3,11 +3,14 @@
 [ext_resource path="res://Assets/Cars/img_toad.png" type="Texture" id=1]
 
 [node name="texCar" type="TextureRect"]
-margin_right = 77.0
-margin_bottom = 74.0
-size_flags_vertical = 3
+margin_right = 60.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 60, 80 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
 texture = ExtResource( 1 )
-stretch_mode = 4
+expand = true
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }

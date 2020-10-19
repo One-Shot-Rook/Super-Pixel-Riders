@@ -41,6 +41,7 @@ size_flags_horizontal = 3
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
+custom_colors/font_color = Color( 0.639216, 0.745098, 0.54902, 1 )
 text = "Coins"
 
 [node name="btnEnergy" type="Button" parent="."]

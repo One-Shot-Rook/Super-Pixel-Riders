@@ -120,6 +120,7 @@ anchor_right = 0.85
 anchor_bottom = 1.0
 margin_top = 16.0
 margin_bottom = -16.0
+custom_colors/font_color = Color( 0.639216, 0.745098, 0.54902, 1 )
 text = "100$"
 __meta__ = {
 "_edit_use_anchors_": false
