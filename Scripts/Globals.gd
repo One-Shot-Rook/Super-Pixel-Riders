@@ -83,6 +83,16 @@ var cars = {
 		"turnRatio":0.9,
 		"slots":4,
 		"mass":25},
+	"souffle":{
+		"displayName": "Souffle",
+		"maxHealth":1000,
+		"unlockCost":12000,
+		"engine":	{"levels":[800, 850, 900, 950, 1000, 1050], 	"baseCost":400, 	"mod":1.15},
+		"handling":	{"levels":[4, 4.2, 4.4, 4.6, 4.8, 5], 			"baseCost":425, 	"mod":1.10},
+		"armor":	{"levels":[0, 4, 8, 12, 16, 20], 				"baseCost":450, 	"mod":1.10},
+		"turnRatio":0.9,
+		"slots":4,
+		"mass":25},
 	"goliath":{
 		"displayName": "Goliath",
 		"maxHealth":2000,
@@ -113,6 +123,9 @@ var skinNameDict = {
 	"vice":{
 		"vice":{"costIRL":-1,"costCoins":100},
 		"afterglow":{"costIRL":1,"costCoins":100}
+	},
+	"souffle":{
+		"souffle":{"costIRL":-1,"costCoins":100},
 	},
 	"manta":{
 		"manta":{"costIRL":-1,"costCoins":100},
