@@ -1,6 +1,7 @@
 extends "res://Scripts/classCar.gd"
 
 var state = "maintain"
+var dim = Vector2.ZERO
 
 var fire = false
 
@@ -19,6 +20,11 @@ func configure(carData,forMenu = false):
 	# General Configure
 	for variable in carData:
 		set(variable,carData[variable])
+	# Shape configure
+	$sprCar.texture = load("res://Assets/Cars/img_"+carName+".png")
+	dim = $sprCar.texture.get_size()
+	dim = Vector2(dim[0]*$sprCar.scale[0],dim[1]*$sprCar.scale[1])
+	$shapeCar.shape.extents = dim/2
 	# Gun configure
 	gunData["gunName"] = gunName
 	for property in gunData:
@@ -30,14 +36,17 @@ func configure(carData,forMenu = false):
 			else:
 				var chaosInt = rng.randi_range(-1,1)
 				upgradeLevel = clamp(0, int(Globals.getCurrentLevel()["ID"]/1.5 + chaosInt - 1), 5)
-			#print(name," has ",property, " level ",str(upgradeLevel))
-			gunData[property] = gunData[property]["levels"][upgradeLevel]
+			if property == "maxAmmo":
+				gunData[property] = gunData[property]["levels"][0]/3
+				#print(name," has ",property, " level ",str(upgradeLevel), " = ",gunData[property])
+			else:
+				gunData[property] = gunData[property]["levels"][upgradeLevel]
+				#print(name," has ",property, " level ",str(upgradeLevel), " = ",gunData[property])
 	reload()
 	$timerAttack.wait_time = gunData["firerate"]
 	$sndShot.stream = load("res://Assets/Sounds/snd_"+str(gunName)+".wav")
 	$sndShot.volume_db = -30
 	health = maxHealth
-	$sprCar.texture = load("res://Assets/Cars/img_"+carName+".png")
 	# Set team
 	add_to_group(team)
 	# Set collision data
@@ -47,7 +56,7 @@ func _physics_process(delta):
 	
 	AI.getBehaviour(self,state)
 	
-	var kinCollisionInfo = handleMovement(delta)
+	var kinCollisionInfo = handleMovement(delta,state)
 	if kinCollisionInfo:
 		if kinCollisionInfo.collider == target:
 			state = AI.getNewState(self,state)
@@ -59,6 +68,8 @@ func _physics_process(delta):
 		$partSmoke.emitting = true
 		if health/maxHealth < 0.25:
 			$partFire.emitting = true
+	
+	$sprBro/texGradient.visible = fire
 
 func tryToShoot():
 	target = AI.getTargetEntity(self,AI.getEnemies(team))

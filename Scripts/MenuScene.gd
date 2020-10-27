@@ -4,9 +4,9 @@ onready var sndMenu = $sndMenu
 
 var currentScene
 var teams = [
-	"toad","virtue","toad","toad",
-	"virtue","toad","viper","toad",
-	"virtue","toad","toad","virtue",
+	"toad","virtue","toad","toad","souffle",
+	"virtue","toad","viper","toad","tangerine",
+	"virtue","toad","toad","virtue","cherry",
 	"toad","baron"]
 
 var turn = 0

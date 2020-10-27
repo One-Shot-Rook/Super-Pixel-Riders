@@ -46,7 +46,7 @@ func setCollision():
 	for otherTeam in Globals.teamBits:
 		set_collision_mask_bit(Globals.teamBits[otherTeam],true)
 
-func handleMovement(delta):
+func handleMovement(delta,state=""):
 	
 	collidedThisTick = false
 	
@@ -61,7 +61,7 @@ func handleMovement(delta):
 	velocity.x = actVector.x*engine*turnRatio
 	velocity += appliedForce
 	
-	var _returnedVelocity = move_and_slide(velocity)
+	var _returnedVelocity = move_and_slide(velocity )
 	actVelocity = (position-prevPos)/delta
 	var kinCollisionInfo
 	var noOfCollisions = get_slide_count()

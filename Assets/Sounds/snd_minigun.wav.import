@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/snd_minigun.wav-2ceb0e9f98244d2e465b6cf62448425d.sample"
+
+[deps]
+
+source_file="res://Assets/Sounds/snd_minigun.wav"
+dest_files=[ "res://.import/snd_minigun.wav-2ceb0e9f98244d2e465b6cf62448425d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
