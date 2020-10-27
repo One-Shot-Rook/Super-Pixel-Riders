@@ -63,6 +63,16 @@ var cars = {
 		"turnRatio":0.7,
 		"slots":4,
 		"mass":30},
+	"bike":{
+		"displayName": "Bike",
+		"maxHealth":800,
+		"unlockCost":5000,
+		"engine":	{"levels":[500, 550, 600, 650, 700, 750], 		"baseCost":200, 	"mod":1.15},
+		"handling":	{"levels":[3, 3.2, 3.4, 3.6, 3.8, 4], 			"baseCost":225, 	"mod":1.10},
+		"armor":	{"levels":[5, 10, 15, 20, 25, 30], 				"baseCost":250, 	"mod":1.10},
+		"turnRatio":0.7,
+		"slots":4,
+		"mass":30},
 	"cherry":{
 		"displayName":"Cherry",
 		"maxHealth":1200,
@@ -133,6 +143,16 @@ var cars = {
 		"turnRatio":1,
 		"slots":4,
 		"mass":20},
+	"barry":{
+		"displayName": "Barry",
+		"maxHealth":2000,
+		"unlockCost":30000,
+		"engine":	{"levels":[500, 550, 600, 650, 700, 750], 		"baseCost":600, 	"mod":1.15},
+		"handling":	{"levels":[1, 1.2, 1.4, 1.6, 1.8, 2], 			"baseCost":625, 	"mod":1.10},
+		"armor":	{"levels":[25, 30, 35, 40, 45, 50], 			"baseCost":650, 	"mod":1.10},
+		"turnRatio":0.3,
+		"slots":4,
+		"mass":100},
 }
 
 var skinNameDict = {
@@ -144,14 +164,17 @@ var skinNameDict = {
 		"vice":{"costIRL":-1,"costCoins":100},
 		"afterglow":{"costIRL":1,"costCoins":100}
 	},
+	"bike":{
+		"bike":{"costIRL":-1,"costCoins":100},
+	},
 	"souffle":{
 		"souffle":{"costIRL":-1,"costCoins":100},
 	},
 	"cherry":{
-		"souffle":{"costIRL":-1,"costCoins":100},
+		"cherry":{"costIRL":-1,"costCoins":100},
 	},
 	"tangerine":{
-		"souffle":{"costIRL":-1,"costCoins":100},
+		"tangerine":{"costIRL":-1,"costCoins":100},
 	},
 	"manta":{
 		"manta":{"costIRL":-1,"costCoins":100},
@@ -166,6 +189,9 @@ var skinNameDict = {
 		"goliath":{"costIRL":-1,"costCoins":100},
 		"ballzack":{"costIRL":1,"costCoins":100},
 		"dickinson":{"costIRL":1,"costCoins":100}
+	},
+	"barry":{
+		"barry":{"costIRL":-1,"costCoins":100},
 	},
 	"raptor":{
 		"raptor":{"costIRL":-1,"costCoins":100},
