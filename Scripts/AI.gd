@@ -11,10 +11,11 @@ var newStates = {
 #var states = ["evade","shoot"]
 
 var stateTable = {
-	"maintain":	{"maintain":0,	"shoot":0.7,	"evade":0,		"ram":0.3},
-	"shoot":	{"maintain":0,	"shoot":0,		"evade":0.3,	"ram":0.7},
-	"evade":	{"maintain":0,	"shoot":0.5,	"evade":0,		"ram":0.5},
-	"ram":		{"maintain":0,	"shoot":0.2,	"evade":0.8,	"ram":0},
+	"maintain":	{"maintain":0.0,	"shoot":0.4,	"trail":0.3,	"evade":0,		"ram":0.3},
+	"shoot":	{"maintain":0.0,	"shoot":0.0,	"trail":0.3,	"evade":0.2,	"ram":0.5},
+	"evade":	{"maintain":0.0,	"shoot":0.5,	"trail":0.0,	"evade":0,		"ram":0.5},
+	"trail":	{"maintain":0.0,	"shoot":0.2,	"trail":0.0,	"evade":0,		"ram":0.8},
+	"ram":		{"maintain":0.0,	"shoot":0.2,	"trail":0.5,	"evade":0.3,	"ram":0.0},
 }
 
 var rng = RandomNumberGenerator.new()
@@ -69,6 +70,8 @@ func getBehaviour(bodyEntity,state):
 				bodyEntity.reload()
 		
 		"ram":
+			if bodyEntity.carName in ["baron"]:
+				bodyEntity.state = getNewState(bodyEntity,"ram")
 			bodyEntity.target = targetEntity
 			var collInfo = bodyEntity.move_and_collide(target_relVector,true,true,true)
 			if collInfo:
@@ -76,14 +79,14 @@ func getBehaviour(bodyEntity,state):
 					# If we've got a teammate in the way OR we are about to ram our target
 					if bodyEntity.team == collInfo.collider.team:
 						bodyEntity.state = getNewState(bodyEntity,"ram")
-				new_carVector = target_relVector.normalized()
+			new_carVector = target_relVector.normalized() * 1.5
 		
 		"evade":
 			var nearEntity = getClosestEntity(bodyEntity)
 			if not nearEntity:
 				return
 			var entity_relVector = nearEntity.position - bodyEntity.position
-			new_carVector = -entity_relVector.normalized() * clamp(distance - entity_relVector.length(),-1,1)
+			new_carVector = -entity_relVector.normalized() * clamp(distance - entity_relVector.length(),0,1)
 			# If we've evaded
 			if new_carVector == Vector2.ZERO:
 				bodyEntity.state = getNewState(bodyEntity,"evade")
@@ -110,10 +113,12 @@ func getBehaviour(bodyEntity,state):
 			if not nearEntity:
 				return
 			var entity_relVector = nearEntity.position - bodyEntity.position
-			new_carVector = -entity_relVector.normalized() * clamp(distance - entity_relVector.length(),0,1)
+			new_carVector = -entity_relVector.normalized() * clamp(distance - entity_relVector.length(),-1,1)
 			# If we've evaded
-			if new_carVector == Vector2.ZERO:
-				bodyEntity.state = getNewState(bodyEntity,"evade")
+			rng.randomize()
+			if rng.randf_range(0,1) > 0.98:
+				print("CHANGE")
+				bodyEntity.state = getNewState(bodyEntity,"trail")
 	
 	bodyEntity.carVector = new_carVector
 	bodyEntity.fireVector = new_fireVector

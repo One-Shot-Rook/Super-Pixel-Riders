@@ -237,10 +237,43 @@ var enemies = {
 		"engine":300,
 		"armor":25,
 		"handling":2,
-		"turnRatio":0.3,
+		"turnRatio":1,
 		"mass":80,
 		"pain":8,
 		"gunName":"rpg"
+	},
+	"souffle":{
+		"maxHealth":350,
+		"money":125,
+		"engine":400,
+		"armor":10,
+		"handling":3,
+		"turnRatio":0.7,
+		"mass":25,
+		"pain":3,
+		"gunName":"shotgun",
+	},
+	"tangerine":{
+		"maxHealth":350,
+		"money":125,
+		"engine":400,
+		"armor":10,
+		"handling":3,
+		"turnRatio":0.7,
+		"mass":25,
+		"pain":3,
+		"gunName":"cannon",
+	},
+	"cherry":{
+		"maxHealth":350,
+		"money":125,
+		"engine":400,
+		"armor":10,
+		"handling":3,
+		"turnRatio":0.7,
+		"mass":25,
+		"pain":3,
+		"gunName":"minigun",
 	},
 }
 
@@ -252,7 +285,7 @@ var guns = {
 		"firerate":	{"levels":[1, 0.9, 0.8, 0.7, 0.6, 0.5], 		"baseCost":35, 	"mod":1.15},
 		"accuracy":	{"levels":[0.3, 0.25, 0.20, 0.15, 0.1, 0.05],	"baseCost":50, 	"mod":1.15},
 		"damage":	{"levels":[15, 20, 25, 30, 35, 40], 			"baseCost":75, "mod":1.15},
-		"maxAmmo":	{"levels":[30, 40, 50, 60, 80, 120], 				"baseCost":150, "mod":1.15},
+		"maxAmmo":	{"levels":[30, 40, 50, 60, 80, 120], 			"baseCost":150, "mod":1.15},
 		"misc":		{"levels":[1.05, 1.10, 1.15, 1.20, 1.25, 1.30], "baseCost":100, "mod":1.15} # kill bonus
 	},
 	"shotgun":{
@@ -269,10 +302,10 @@ var guns = {
 		"displayName":"Uzi",
 		"unlockCost":2400,
 		"speed":1600,
-		"firerate":	{"levels":[0.15, 0.13, 0.11, 0.09, 0.07, 0.05], 	"baseCost":200, "mod":1.15},
+		"firerate":	{"levels":[0.15, 0.13, 0.11, 0.09, 0.07, 0.05], "baseCost":200, "mod":1.15},
 		"accuracy":	{"levels":[0.6, 0.5, 0.4, 0.3, 0.2, 0.1],		"baseCost":150, "mod":1.15},
 		"damage":	{"levels":[3, 5, 7, 9, 12, 15], 				"baseCost":250, "mod":1.15},
-		"maxAmmo":	{"levels":[24, 36, 48, 60, 90, 120], 				"baseCost":150, "mod":1.15},
+		"maxAmmo":	{"levels":[24, 36, 48, 60, 90, 120], 			"baseCost":150, "mod":1.15},
 		"misc":		{"levels":[1.05,1.10,1.15,1.20,1.25,1.30], 		"baseCost":0, 	"mod":1.15} # ricochet
 	},
 #	"rifle":{
@@ -300,7 +333,7 @@ var guns = {
 		"firerate":	{"levels":[4, 3.7, 3.4, 3.1, 2.8, 2.5], 		"baseCost":800, "mod":1.15},
 		"accuracy":	{"levels":[0.5, 0.4, 0.3, 0.2, 0.1, 0.05],		"baseCost":500, "mod":1.15},
 		"damage":	{"levels":[500, 550, 600, 650, 700, 800], 		"baseCost":900, "mod":1.15},
-		"maxAmmo":	{"levels":[3, 4, 5, 6, 8, 12], 				"baseCost":150, "mod":1.15},
+		"maxAmmo":	{"levels":[3, 4, 5, 6, 8, 12], 					"baseCost":150, "mod":1.15},
 		"misc":		{"levels":[300,350,400,450,500,550], 			"baseCost":650, "mod":1.15} # radius
 	},
 #	"flamethrower":{
@@ -326,11 +359,11 @@ var guns = {
 		"displayName":"Gatling Gun",
 		"unlockCost":100000,
 		"speed":3000,
-		"firerate":	{"levels":[0.05, 0.045, 0.04, 0.035, 0.03, 0.025],"baseCost":2000,"mod":1.15},
-		"accuracy":	{"levels":[0.5, 0.4, 0.3, 0.2, 0.1, 0.05],		"baseCost":1500,"mod":1.15},
+		"firerate":	{"levels":[0.05, 0.045, 0.04, 0.035, 0.03, 0.025],	"baseCost":2000,"mod":1.15},
+		"accuracy":	{"levels":[0.5, 0.4, 0.3, 0.2, 0.1, 0.05],			"baseCost":1500,"mod":1.15},
 		"damage":	{"levels":[10, 13, 16, 20, 24, 30], 				"baseCost":2250,"mod":1.15},
-		"maxAmmo":	{"levels":[50, 70, 100, 150, 200, 300], 				"baseCost":150, "mod":1.15},
-		"misc":		{"levels":[300,350,400,450,500,550], 			"baseCost":0,	"mod":1.15} # arc
+		"maxAmmo":	{"levels":[50, 70, 100, 150, 200, 300], 			"baseCost":150, "mod":1.15},
+		"misc":		{"levels":[300,350,400,450,500,550], 				"baseCost":0,	"mod":1.15} # arc
 	}
 }
 
@@ -462,7 +495,10 @@ var teamBits = {
 	"toad":20,
 	"virtue":19,
 	"viper":18,
-	"baron":17
+	"baron":17,
+	"souffle":16,
+	"tangerine":15,
+	"cherry":14,
 }
 
 var projectileBits = {
