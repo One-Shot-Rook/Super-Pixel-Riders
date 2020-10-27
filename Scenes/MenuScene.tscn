@@ -9,10 +9,10 @@
 [ext_resource path="res://Assets/Sounds/snd_theme2.wav" type="AudioStream" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 5.9155, 1772.81 )
+extents = Vector2( 5.9155, 1299.72 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 841.178, 5 )
+extents = Vector2( 779.105, 5 )
 
 [node name="MenuScene" type="Control"]
 anchor_right = 1.0
@@ -133,24 +133,24 @@ volume_db = -10.0
 autoplay = true
 
 [node name="bodyBorder" type="StaticBody2D" parent="."]
-position = Vector2( -3.56348, 773.3 )
+position = Vector2( 540, 960 )
 collision_layer = 512
 collision_mask = 0
 
 [node name="shapeLeft" type="CollisionShape2D" parent="bodyBorder"]
-position = Vector2( -245.033, 50.7596 )
+position = Vector2( -740, 0 )
 shape = SubResource( 1 )
 
 [node name="shapeRight" type="CollisionShape2D" parent="bodyBorder"]
-position = Vector2( 1336.3, 18.984 )
+position = Vector2( 740, 0 )
 shape = SubResource( 1 )
 
 [node name="shapeTop" type="CollisionShape2D" parent="bodyBorder"]
-position = Vector2( 532.873, -1154.84 )
+position = Vector2( 0, -1260 )
 shape = SubResource( 2 )
 
 [node name="shapeBottom" type="CollisionShape2D" parent="bodyBorder"]
-position = Vector2( 532.597, 1451.35 )
+position = Vector2( 0, 1260 )
 shape = SubResource( 2 )
 [connection signal="timeout" from="Node2D/texLogo/timer" to="Node2D/texLogo" method="_on_timer_timeout"]
 [connection signal="pressed" from="Node2D/labPlay" to="." method="_on_labPlay_pressed"]

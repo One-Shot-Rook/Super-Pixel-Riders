@@ -1,6 +1,6 @@
 extends Node
 
-var states = ["shoot","evade","ram"]
+var states = ["shoot","evade","ram","trail"]
 
 var newStates = {
 	"shoot":{"timer":false},
@@ -83,7 +83,7 @@ func getBehaviour(bodyEntity,state):
 			if not nearEntity:
 				return
 			var entity_relVector = nearEntity.position - bodyEntity.position
-			new_carVector = -entity_relVector.normalized() * clamp(distance - entity_relVector.length(),0,1)
+			new_carVector = -entity_relVector.normalized() * clamp(distance - entity_relVector.length(),-1,1)
 			# If we've evaded
 			if new_carVector == Vector2.ZERO:
 				bodyEntity.state = getNewState(bodyEntity,"evade")
@@ -104,6 +104,16 @@ func getBehaviour(bodyEntity,state):
 			# If we're in view
 			if inView(bodyEntity):
 				bodyEntity.state = getNewState(bodyEntity,"maintain")
+		
+		"trail":
+			var nearEntity = getClosestEntity(bodyEntity)
+			if not nearEntity:
+				return
+			var entity_relVector = nearEntity.position - bodyEntity.position
+			new_carVector = -entity_relVector.normalized() * clamp(distance - entity_relVector.length(),0,1)
+			# If we've evaded
+			if new_carVector == Vector2.ZERO:
+				bodyEntity.state = getNewState(bodyEntity,"evade")
 	
 	bodyEntity.carVector = new_carVector
 	bodyEntity.fireVector = new_fireVector
