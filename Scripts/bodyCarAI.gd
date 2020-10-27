@@ -38,10 +38,10 @@ func configure(carData,forMenu = false):
 				upgradeLevel = clamp(0, int(Globals.getCurrentLevel()["ID"]/1.5 + chaosInt - 1), 5)
 			if property == "maxAmmo":
 				gunData[property] = gunData[property]["levels"][0]/3
-				print(name," has ",property, " level ",str(upgradeLevel), " = ",gunData[property])
+				#print(name," has ",property, " level ",str(upgradeLevel), " = ",gunData[property])
 			else:
 				gunData[property] = gunData[property]["levels"][upgradeLevel]
-				print(name," has ",property, " level ",str(upgradeLevel), " = ",gunData[property])
+				#print(name," has ",property, " level ",str(upgradeLevel), " = ",gunData[property])
 	reload()
 	$timerAttack.wait_time = gunData["firerate"]
 	$sndShot.stream = load("res://Assets/Sounds/snd_"+str(gunName)+".wav")
