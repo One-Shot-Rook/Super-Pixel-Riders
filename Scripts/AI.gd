@@ -117,7 +117,6 @@ func getBehaviour(bodyEntity,state):
 			# If we've evaded
 			rng.randomize()
 			if rng.randf_range(0,1) > 0.98:
-				print("CHANGE")
 				bodyEntity.state = getNewState(bodyEntity,"trail")
 	
 	bodyEntity.carVector = new_carVector
