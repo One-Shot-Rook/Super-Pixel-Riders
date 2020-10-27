@@ -63,6 +63,16 @@ var cars = {
 		"turnRatio":0.7,
 		"slots":4,
 		"mass":30},
+	"cherry":{
+		"displayName":"Cherry",
+		"maxHealth":1200,
+		"unlockCost":7000,
+		"engine":	{"levels":[650, 700, 750, 800, 850, 900], 	    "baseCost":300, 	"mod":1.15},
+		"handling":	{"levels":[3.4, 3.6, 3.8, 4, 4.2, 4.4], 		"baseCost":325, 	"mod":1.10},
+		"armor":	{"levels":[6, 11, 15, 19, 24, 29], 				"baseCost":350, 	"mod":1.10},
+		"turnRatio":0.75,
+		"slots":4,
+		"mass":35},
 	"dallas":{
 		"displayName":"Dallas",
 		"maxHealth":1500,
@@ -83,6 +93,26 @@ var cars = {
 		"turnRatio":0.9,
 		"slots":4,
 		"mass":25},
+	"souffle":{
+		"displayName": "Souffle",
+		"maxHealth":1000,
+		"unlockCost":12000,
+		"engine":	{"levels":[800, 850, 900, 950, 1000, 1050], 	"baseCost":400, 	"mod":1.15},
+		"handling":	{"levels":[4, 4.2, 4.4, 4.6, 4.8, 5], 			"baseCost":425, 	"mod":1.10},
+		"armor":	{"levels":[0, 4, 8, 12, 16, 20], 				"baseCost":450, 	"mod":1.10},
+		"turnRatio":0.9,
+		"slots":4,
+		"mass":25},
+	"tangerine":{
+		"displayName":"Tangerine",
+		"maxHealth":1200,
+		"unlockCost":7000,
+		"engine":	{"levels":[650, 700, 750, 800, 850, 900], 	    "baseCost":300, 	"mod":1.15},
+		"handling":	{"levels":[3.4, 3.6, 3.8, 4, 4.2, 4.4], 		"baseCost":325, 	"mod":1.10},
+		"armor":	{"levels":[6, 11, 15, 19, 24, 29], 				"baseCost":350, 	"mod":1.10},
+		"turnRatio":0.75,
+		"slots":4,
+		"mass":35},
 	"goliath":{
 		"displayName": "Goliath",
 		"maxHealth":2000,
@@ -113,6 +143,15 @@ var skinNameDict = {
 	"vice":{
 		"vice":{"costIRL":-1,"costCoins":100},
 		"afterglow":{"costIRL":1,"costCoins":100}
+	},
+	"souffle":{
+		"souffle":{"costIRL":-1,"costCoins":100},
+	},
+	"cherry":{
+		"souffle":{"costIRL":-1,"costCoins":100},
+	},
+	"tangerine":{
+		"souffle":{"costIRL":-1,"costCoins":100},
 	},
 	"manta":{
 		"manta":{"costIRL":-1,"costCoins":100},
