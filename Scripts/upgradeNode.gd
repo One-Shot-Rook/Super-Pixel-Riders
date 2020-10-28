@@ -26,6 +26,9 @@ func _on_btnUpg_pressed():
 	updateUI()
 
 func updateUI():
+	
+	visible = not (Globals.getGunName() == "pistol" and upgName == "maxAmmo")
+	
 	var level
 	var cost
 	var unlocked
@@ -46,6 +49,7 @@ func updateUI():
 			print("you just pressed a nonexistent button.... how?")
 		_:
 			print("invalid crib location")
+	
 	for i in range (1,7):
 		var node = get_node("ctnLevel/upgbar" + str(i))
 		if levels > i:

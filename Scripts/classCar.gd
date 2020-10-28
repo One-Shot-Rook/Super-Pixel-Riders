@@ -46,7 +46,7 @@ func setCollision():
 	for otherTeam in Globals.teamBits:
 		set_collision_mask_bit(Globals.teamBits[otherTeam],true)
 
-func handleMovement(delta,state=""):
+func handleMovement(delta,_state=""):
 	
 	collidedThisTick = false
 	

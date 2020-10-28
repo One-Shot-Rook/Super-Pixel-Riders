@@ -209,6 +209,9 @@ var skinNameDict = {
 	"shotgun":{
 		"shotgun":{"costIRL":-1,"costCoins":100}
 	},
+	"rifle":{
+		"rifle":{"costIRL":-1,"costCoins":100}
+	},
 	"sniper":{
 		"sniper":{"costIRL":-1,"costCoins":100}
 	},
@@ -277,7 +280,7 @@ var enemies = {
 		"turnRatio":0.7,
 		"mass":25,
 		"pain":3,
-		"gunName":"shotgun",
+		"gunName":"rifle",
 	},
 	"tangerine":{
 		"maxHealth":350,
@@ -334,15 +337,16 @@ var guns = {
 		"maxAmmo":	{"levels":[24, 36, 48, 60, 90, 120], 			"baseCost":150, "mod":1.15},
 		"misc":		{"levels":[1.05,1.10,1.15,1.20,1.25,1.30], 		"baseCost":0, 	"mod":1.15} # ricochet
 	},
-#	"rifle":{
-#		"displayName":"AK-47",
-#		"unlockCost":4500,
-#		"speed":1200,
-#		"firerate":	{"levels":[4, 3.5, 3, 2.5, 2, 1.5], 			"baseCost":300, "mod":1.15},
-#		"accuracy":	{"levels":[0.5, 0.4, 0.3, 0.2, 0.1, 0.05],		"baseCost":250, "mod":1.15},
-#		"damage":	{"levels":[500, 600, 700, 800, 900, 1000], 		"baseCost":400, "mod":1.15},
-#		"misc":		{"levels":[300,350,400,450,500,550], 			"baseCost":0, 	"mod":1.15} # arc
-#	},
+	"rifle":{
+		"displayName":"AK-47",
+		"unlockCost":4500,
+		"speed":2400,
+		"firerate":	{"levels":[1, 0.9, 0.8, 0.7, 0.5, 0.5],			"baseCost":300, "mod":1.15},
+		"accuracy":	{"levels":[0.5, 0.4, 0.3, 0.2, 0.1, 0.05],		"baseCost":250, "mod":1.15},
+		"damage":	{"levels":[30, 35, 40, 45, 50, 55], 			"baseCost":400, "mod":1.15},
+		"maxAmmo":	{"levels":[20, 24, 28, 32, 36, 40], 			"baseCost":150, "mod":1.15},
+		"misc":		{"levels":[3,4,5], 								"baseCost":400, "mod":1.5} # burst
+	},
 #	"sniper":{
 #		"displayName":"Barret 50.cal",
 #		"unlockCost":7000,

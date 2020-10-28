@@ -19,6 +19,8 @@ func updateUI(slots):
 	$reloadPrg.max_value = 360
 	$reloadPrg.value = (slots[gunName]["timer"].time_left/slots[gunName]["timer"].wait_time)*360
 	$labAmmo.text = str(slots[gunName]["ammo"])
+	if gunName == "pistol":
+		$labAmmo.visible = false
 
 func _on_btnFire_input_event(_viewport, event, _shape_idx):
 	

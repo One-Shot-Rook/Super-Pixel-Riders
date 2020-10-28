@@ -75,10 +75,23 @@ func tryToShoot(gunName):
 	if slots[gunName]["fire"] == true and slots[gunName]["timer"].time_left == 0:
 		var projectiles = Guns.getGunBehaviour(slots[gunName],self,target)
 		for bulletData in projectiles:
-			get_parent().add_child(bulletData["projectile"])
-		slots[gunName]["sound"].play()
+			if bulletData["delay"] == 0:
+				fireBullet(bulletData["projectile"],slots[gunName]["sound"])
+			else:
+				var newTimer = Timer.new()
+				newTimer.wait_time = bulletData["delay"]
+				newTimer.connect("timeout",self,"fireBullet",[bulletData["projectile"],slots[gunName]["sound"]])
+				newTimer.connect("timeout",newTimer,"queue_free")
+				newTimer.autostart = true
+				add_child(newTimer)
+				
 		slots[gunName]["timer"].start()
-		slots[gunName]["ammo"] -= 1
+		if gunName != "pistol":
+			slots[gunName]["ammo"] -= 1
+
+func fireBullet(objProjectile,objSound):
+	get_parent().add_child(objProjectile)
+	objSound.play()
 
 var inputKeys = [KEY_1,KEY_2,KEY_3,KEY_4]
 

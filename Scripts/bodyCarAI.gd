@@ -75,11 +75,21 @@ func tryToShoot():
 	target = AI.getTargetEntity(self,AI.getEnemies(team))
 	var projectiles = Guns.getGunBehaviour(gunData,self,target)
 	for bulletData in projectiles:
-		get_parent().add_child(bulletData["projectile"])
+		if bulletData["delay"] == 0:
+			fireBullet(bulletData["projectile"])
+		else:
+			var newTimer = Timer.new()
+			newTimer.wait_time = bulletData["delay"]
+			newTimer.connect("timeout",self,"fireBullet",[bulletData["projectile"]])
+			newTimer.connect("timeout",newTimer,"queue_free")
+			newTimer.autostart = true
+			add_child(newTimer)
 	$sndShot.play()
 	$timerAttack.start()
 	gunData["ammo"] -= 1
 
+func fireBullet(objProjectile):
+	get_parent().add_child(objProjectile)
 
 func _on_timerAttack_timeout():
 	if fire == true:
