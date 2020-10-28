@@ -153,6 +153,16 @@ var cars = {
 		"turnRatio":0.3,
 		"slots":4,
 		"mass":100},
+	"thomas":{
+		"displayName": "Thomas",
+		"maxHealth":2000,
+		"unlockCost":30000,
+		"engine":	{"levels":[500, 550, 600, 650, 700, 750], 		"baseCost":600, 	"mod":1.15},
+		"handling":	{"levels":[1, 1.2, 1.4, 1.6, 1.8, 2], 			"baseCost":625, 	"mod":1.10},
+		"armor":	{"levels":[25, 30, 35, 40, 45, 50], 			"baseCost":650, 	"mod":1.10},
+		"turnRatio":0.3,
+		"slots":4,
+		"mass":100},
 }
 
 var skinNameDict = {
@@ -198,6 +208,9 @@ var skinNameDict = {
 		"toxic":{"costIRL":1,"costCoins":100},
 		"angel":{"costIRL":1,"costCoins":100},
 		"midnight":{"costIRL":1,"costCoins":100},
+	},
+	"thomas":{
+		"thomas":{"costIRL":-1,"costCoins":100},
 	},
 	"pistol":{
 		"pistol":{"costIRL":-1,"costCoins":100},
