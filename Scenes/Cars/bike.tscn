@@ -1,9 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Cars/cherry.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Cars/img_bike.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Cars/bodyManta.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 9.39201, 20.092 )
 
 [node name="bodyCarBike" instance=ExtResource( 1 )]
+scale = Vector2( 4, 4 )
+z_as_relative = false
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="shapeCar" parent="." index="1"]
+position = Vector2( 0, -2.94646 )
+shape = SubResource( 1 )
 
 [node name="sprCar" parent="." index="2"]
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )

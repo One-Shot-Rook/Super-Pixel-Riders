@@ -24,6 +24,7 @@ func configure(carData,forMenu = false):
 	$sprCar.texture = load("res://Assets/Cars/img_"+carName+".png")
 	dim = $sprCar.texture.get_size()
 	dim = Vector2(dim[0]*$sprCar.scale[0],dim[1]*$sprCar.scale[1])
+	$shapeCar.shape = RectangleShape2D.new()
 	$shapeCar.shape.extents = dim/2
 	# Gun configure
 	gunData["gunName"] = gunName
@@ -45,7 +46,8 @@ func configure(carData,forMenu = false):
 	reload()
 	$timerAttack.wait_time = gunData["firerate"]
 	$sndShot.stream = load("res://Assets/Sounds/snd_"+str(gunName)+".wav")
-	$sndShot.volume_db = -30
+	if not gunName in ["cannon"]:
+		$sndShot.volume_db = -30
 	health = maxHealth
 	# Set team
 	add_to_group(team)

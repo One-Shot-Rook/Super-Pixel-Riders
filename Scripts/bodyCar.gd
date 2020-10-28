@@ -103,15 +103,6 @@ func _input(event):
 					fireGun(gunNames[keyIndex])
 				else:
 					ceaseGun(gunNames[keyIndex])
-			
-			elif event.scancode == KEY_SPACE:
-				
-				if event.pressed:
-					if Globals.input == false:
-						Globals.input = true
-						Globals.nextTarget()
-				else:
-					Globals.input = false
 
 
 

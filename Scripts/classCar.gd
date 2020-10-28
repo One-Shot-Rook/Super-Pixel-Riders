@@ -148,8 +148,8 @@ func damage(dmg):
 
 
 func carCollision(info:KinematicCollision2D):
-	calculateCollision(info.normal,info.collider.actVelocity,info.collider.mass)
-	info.collider.calculateCollision(-info.normal,actVelocity,mass)
+	calculateCollision(info.normal,info.collider.velocity,info.collider.mass)
+	info.collider.calculateCollision(-info.normal,velocity,mass)
 
 func calculateCollision(normal,other_actVelocity,other_mass):
 	# Check if we've collided this turn
@@ -158,10 +158,10 @@ func calculateCollision(normal,other_actVelocity,other_mass):
 	collidedThisTick = true
 	
 	var colliderSpeed = -other_actVelocity.dot(normal) # Calculate impact
-	var ourSpeed = -actVelocity.dot(normal)
+	var ourSpeed = -velocity.dot(normal)
 	var newSpeed = ( 1*other_mass*(colliderSpeed-ourSpeed) + mass*ourSpeed + other_mass*colliderSpeed )/( mass + other_mass )
 	var colliderImpulse = colliderSpeed * other_mass
 	if -colliderImpulse > mass*20: # Ignore small collisions
-		appliedForce += newSpeed*(-normal)
+		appliedForce += newSpeed*(-normal)/2
 		#print(name," took ",-colliderImpulse," impact")
 		damage(-colliderImpulse/600)

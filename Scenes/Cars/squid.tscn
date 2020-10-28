@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/VanHunter/cars/bluebro.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.67201, 17.0105 )
+extents = Vector2( 12.6584, 18.9587 )
 
 [node name="bodyCarSquid" type="KinematicBody2D"]
 scale = Vector2( 4, 4 )

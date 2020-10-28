@@ -115,7 +115,5 @@ volume_db = -10.0
 process_mode = 0
 
 [node name="twnDamage" type="Tween" parent="."]
-
-[node name="twnBro" type="Tween" parent="."]
 [connection signal="input_event" from="." to="." method="_on_bodyCarEnemy_input_event"]
 [connection signal="timeout" from="timerAttack" to="." method="_on_timerAttack_timeout"]
