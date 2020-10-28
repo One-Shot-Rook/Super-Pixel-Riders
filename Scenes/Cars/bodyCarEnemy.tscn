@@ -18,7 +18,7 @@ colors = PoolColorArray( 1, 0, 0, 1, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=3]
 gradient = SubResource( 2 )
-width = 20
+width = 40
 
 [node name="bodyCarAI" type="KinematicBody2D"]
 scale = Vector2( 4, 4 )
