@@ -820,6 +820,12 @@ func upgradeGun(upgName,gunName = getGunName()):
 func getUpgradeLevel(upgName, query = getCarName()):
 	return upgs[query][upgName]
 
+func getNumberOfLevels(upgName, objName):
+	if objName in cars:
+		return cars[objName][upgName].size()
+	elif objName in guns:
+		return guns[objName][upgName].size()
+
 func getUpgradeCost(upgName,carName = getCarName()):
 	var baseCost = cars[carName][upgName]["baseCost"]
 	var mod = cars[carName][upgName]["mod"]

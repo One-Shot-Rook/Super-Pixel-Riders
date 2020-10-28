@@ -36,17 +36,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="UI" type="Node2D" parent="."]
 z_index = 50
 z_as_relative = false
 
-[node name="texLogo" type="TextureRect" parent="Node2D"]
+[node name="texLogo" type="TextureRect" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 0.15
-margin_left = 49.9451
-margin_top = 67.7631
-margin_right = 1033.95
-margin_bottom = 287.763
+margin_left = 50.0
+margin_top = 67.0
+margin_right = 1034.0
+margin_bottom = 287.0
 texture = ExtResource( 2 )
 stretch_mode = 6
 script = ExtResource( 7 )
@@ -54,11 +54,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="timer" type="Timer" parent="Node2D/texLogo"]
+[node name="timer" type="Timer" parent="UI/texLogo"]
 wait_time = 2.0
 autostart = true
 
-[node name="labPlay" type="Button" parent="Node2D"]
+[node name="Buttons" type="Node2D" parent="UI"]
+
+[node name="btnPlay" type="Button" parent="UI/Buttons"]
 anchor_top = 0.7
 anchor_bottom = 0.7
 margin_left = -50.0
@@ -71,7 +73,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="labGarage" type="Button" parent="Node2D"]
+[node name="btnGarage" type="Button" parent="UI/Buttons"]
 anchor_top = 0.75
 anchor_bottom = 0.75
 margin_left = -50.0
@@ -84,7 +86,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="labLeaderboards" type="Button" parent="Node2D"]
+[node name="btnLeaderboards" type="Button" parent="UI/Buttons"]
 anchor_top = 0.8
 anchor_bottom = 0.8
 margin_left = -50.0
@@ -97,7 +99,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="labSettings" type="Button" parent="Node2D"]
+[node name="btnSettings" type="Button" parent="UI/Buttons"]
 anchor_top = 0.85
 anchor_bottom = 0.85
 margin_left = -50.0
@@ -110,7 +112,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="labReset" type="Button" parent="Node2D"]
+[node name="btnReset" type="Button" parent="UI/Buttons"]
 anchor_top = 0.9
 anchor_bottom = 0.9
 margin_left = -50.0
@@ -122,6 +124,23 @@ align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="twnButtons" type="Tween" parent="UI/Buttons"]
+
+[node name="btnHide" type="Button" parent="UI"]
+anchor_top = 0.9
+anchor_bottom = 0.9
+margin_left = -50.0
+margin_top = 1824.0
+margin_right = 114.0
+margin_bottom = 1913.0
+text = "<-  "
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="twnLogo" type="Tween" parent="UI"]
 
 [node name="timerSpawn" type="Timer" parent="."]
 wait_time = 4.0
@@ -151,9 +170,10 @@ shape = SubResource( 2 )
 [node name="shapeBottom" type="CollisionShape2D" parent="bodyBorder"]
 position = Vector2( 0, 1260 )
 shape = SubResource( 2 )
-[connection signal="timeout" from="Node2D/texLogo/timer" to="Node2D/texLogo" method="_on_timer_timeout"]
-[connection signal="pressed" from="Node2D/labPlay" to="." method="_on_labPlay_pressed"]
-[connection signal="pressed" from="Node2D/labGarage" to="." method="_on_labGarage_pressed"]
-[connection signal="pressed" from="Node2D/labSettings" to="." method="_on_labSettings_pressed"]
-[connection signal="pressed" from="Node2D/labReset" to="." method="_on_labReset_pressed"]
+[connection signal="timeout" from="UI/texLogo/timer" to="UI/texLogo" method="_on_timer_timeout"]
+[connection signal="pressed" from="UI/Buttons/btnPlay" to="." method="_on_labPlay_pressed"]
+[connection signal="pressed" from="UI/Buttons/btnGarage" to="." method="_on_labGarage_pressed"]
+[connection signal="pressed" from="UI/Buttons/btnSettings" to="." method="_on_labSettings_pressed"]
+[connection signal="pressed" from="UI/Buttons/btnReset" to="." method="_on_labReset_pressed"]
+[connection signal="pressed" from="UI/btnHide" to="." method="_on_btnHide_pressed"]
 [connection signal="timeout" from="timerSpawn" to="." method="_on_timerSpawn_timeout"]

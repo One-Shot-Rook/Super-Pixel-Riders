@@ -89,10 +89,6 @@ func tryToShoot(gunName):
 		if gunName != "pistol":
 			slots[gunName]["ammo"] -= 1
 
-func fireBullet(objProjectile,objSound):
-	get_parent().add_child(objProjectile)
-	objSound.play()
-
 var inputKeys = [KEY_1,KEY_2,KEY_3,KEY_4]
 
 func _input(event):

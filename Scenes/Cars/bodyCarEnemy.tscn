@@ -18,7 +18,7 @@ colors = PoolColorArray( 1, 0, 0, 1, 1, 1, 1, 0 )
 
 [sub_resource type="GradientTexture" id=3]
 gradient = SubResource( 2 )
-width = 40
+width = 20
 
 [node name="bodyCarAI" type="KinematicBody2D"]
 scale = Vector2( 4, 4 )
@@ -99,9 +99,11 @@ process_mode = 0
 autostart = true
 
 [node name="prgHealth" parent="." instance=ExtResource( 4 )]
+visible = false
 mouse_filter = 2
 
 [node name="sprState" type="Sprite" parent="."]
+visible = false
 position = Vector2( -20.69, -26.1128 )
 texture = ExtResource( 6 )
 

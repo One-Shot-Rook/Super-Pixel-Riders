@@ -2,6 +2,8 @@ extends Control
 
 onready var sndMenu = $sndMenu
 
+var hidden = false
+
 var currentScene
 var teams = [
 	"toad","virtue","toad","toad","souffle",
@@ -51,3 +53,26 @@ func _on_labSettings_pressed():
 
 func _on_labReset_pressed():
 	Globals.resetSaveData()
+
+func _on_btnHide_pressed():
+	hidden = not hidden
+	# Logo
+	$UI/twnLogo.interpolate_property(
+		$UI/texLogo, "self_modulate",
+		null, Color(1,1,1,1)*int(not hidden), 1,
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	$UI/twnLogo.start()
+	# Buttons
+	$UI/Buttons/twnButtons.interpolate_property(
+		$UI/Buttons, "position",
+		null, Vector2(int(hidden)*(-500),0), 1,
+		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	$UI/Buttons/twnButtons.start()
+	# Button text
+	$UI/btnHide.text = "->  " if hidden else "<-  "
+
+
+
+
+
+

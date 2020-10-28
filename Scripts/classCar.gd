@@ -91,6 +91,10 @@ func gainAmmo(gunName):
 	amount = clamp(ceil(amount),0,slots[gunName]["maxAmmo"]-slots[gunName]["ammo"])
 	slots[gunName]["ammo"] += amount
 
+func fireBullet(objProjectile,objSound):
+	get_parent().add_child(objProjectile)
+	objSound.play()
+
 func damage(dmg):
 	
 	if dmg < 0:

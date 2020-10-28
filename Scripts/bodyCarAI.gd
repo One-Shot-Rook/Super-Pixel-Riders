@@ -32,7 +32,7 @@ func configure(carData,forMenu = false):
 			rng.randomize()
 			var upgradeLevel
 			if forMenu:
-				upgradeLevel = rng.randi_range(0,5)
+				upgradeLevel = rng.randi_range(0,Globals.getNumberOfLevels(property, gunName)-1)
 			else:
 				var chaosInt = rng.randi_range(-1,1)
 				upgradeLevel = clamp(0, int(Globals.getCurrentLevel()["ID"]/1.5 + chaosInt - 1), 5)
@@ -76,20 +76,16 @@ func tryToShoot():
 	var projectiles = Guns.getGunBehaviour(gunData,self,target)
 	for bulletData in projectiles:
 		if bulletData["delay"] == 0:
-			fireBullet(bulletData["projectile"])
+			fireBullet(bulletData["projectile"],$sndShot)
 		else:
 			var newTimer = Timer.new()
 			newTimer.wait_time = bulletData["delay"]
-			newTimer.connect("timeout",self,"fireBullet",[bulletData["projectile"]])
+			newTimer.connect("timeout",self,"fireBullet",[bulletData["projectile"],$sndShot])
 			newTimer.connect("timeout",newTimer,"queue_free")
 			newTimer.autostart = true
 			add_child(newTimer)
-	$sndShot.play()
 	$timerAttack.start()
 	gunData["ammo"] -= 1
-
-func fireBullet(objProjectile):
-	get_parent().add_child(objProjectile)
 
 func _on_timerAttack_timeout():
 	if fire == true:
