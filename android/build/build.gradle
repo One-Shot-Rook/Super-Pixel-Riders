@@ -44,6 +44,10 @@ allprojects {
 }
 
 dependencies {
+    def billing_version = "3.0.0"
+
+    implementation "com.android.billingclient:billing:$billing_version"
+
     implementation libraries.supportCoreUtils
     implementation libraries.kotlinStdLib
     implementation libraries.v4Support
