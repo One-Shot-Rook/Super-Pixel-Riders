@@ -2,22 +2,33 @@ extends Control
 
 var load_bodyCarEnemy = preload("res://Scenes/Cars/bodyCarEnemy.tscn")
 
-var basePain: int
-var enemyCarArray = [
-	"toad","toad","virtue","toad","virtue","virtue","toad","virtue","viper",
-	"virtue","virtue","viper","toad","virtue","virtue","viper","viper","baron"
-	]
+var basePain: float
+var enemyCarArray = []
 #var enemyCarArray = ["bad","bad2","bad3"]
 
 var simul = 3
 var rng = RandomNumberGenerator.new()
-
+var allCars = []
+var endlessMode = false
+var endlessThresh = 0.0
+var ENDLESS_PainScaler = 0.15
+var ENDLESS_ThreshScaler = 0.15
 
 func _ready():
 	
+	for carName in Globals.enemies:
+		allCars.append(carName)
+	
 	# Load Level
 	var levelData = Globals.getCurrentLevel()
-	enemyCarArray = levelData["enemyList"]
+	if not levelData.has("enemyList"): # If endless mode is on
+		endlessMode = true
+		for car in range(5):
+			rng.randomize()
+			var maxCarID = min(allCars.size()-1,floor(endlessThresh))
+			enemyCarArray.append( { "carName" : allCars[rng.randi_range(0,maxCarID)] } )
+	else:
+		enemyCarArray = levelData["enemyList"]
 	$texRoad.texture = load("res://Assets/Levels/img_"+levelData["background"]+".png")
 	basePain = levelData["basePain"]
 	
@@ -45,16 +56,25 @@ func _on_timerSpawn_timeout():
 		pain += enemy.pain
 	
 	# Cap amount of pain
-	if pain >= basePain and noOfEnemies != 0:
+	if pain >= floor(basePain) and noOfEnemies != 0:
 		return
 	
 	# End game if all enemies are dead
-	if enemyCarArray.empty():
+	if enemyCarArray.empty() and not endlessMode:
 		if noOfEnemies == 0:
 			Globals.gainLevelReward()
 			Globals.unlockNextLevel()
 			var _currentScene = get_tree().change_scene("res://Scenes/GameWin.tscn")
 		return
+	
+	# Add more cars to the array if we're in endless
+	if endlessMode: # If endless mode is on
+		while enemyCarArray.size() < 5:
+			rng.randomize()
+			var maxCarID = min(allCars.size()-1,floor(endlessThresh))
+			enemyCarArray.append( { "carName" : allCars[rng.randi_range(0,maxCarID)] } )
+			basePain += ENDLESS_PainScaler
+			endlessThresh += ENDLESS_ThreshScaler
 	
 	# Spawn enemy car
 	var spawnData = enemyCarArray[0]

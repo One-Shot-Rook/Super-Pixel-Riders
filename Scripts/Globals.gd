@@ -31,6 +31,9 @@ var freeUpgrades = false
 var invincible = false
 var rapidFire = false
 
+var endless = false
+var endless_lootProb = 0.25
+
 var coinShopData = [
 	{"Coins":2000, "Price":0.49},
 	{"Coins":5000, "Price":0.99},
@@ -728,6 +731,8 @@ func getNoOfGuns():
 # LEVEL
 
 func getCurrentLevel():
+	if endless == true:
+		return {"background":"forest","basePain":5,"ID":3}
 	return roadmap[currentLevel].duplicate(true)
 
 func gainLevelReward():

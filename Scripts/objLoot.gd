@@ -8,7 +8,8 @@ func _ready():
 	var gunData = Globals.getGunVariables()
 	var gunNames = []
 	for gunName in gunData:
-		gunNames.append(gunName)
+		if gunName != "pistol":
+			gunNames.append(gunName)
 	rng.randomize()
 	var gunIndex = rng.randi_range(0,gunNames.size()-1)
 	ammoType = gunNames[gunIndex]
