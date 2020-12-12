@@ -37,6 +37,7 @@ var money
 
 func _ready():
 	add_to_group("car")
+	lootProb = Globals.endless_lootProb
 
 func setCollision():
 	set_collision_layer_bit(Globals.teamBits[team],true)

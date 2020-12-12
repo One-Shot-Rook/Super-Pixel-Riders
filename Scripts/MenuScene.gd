@@ -48,6 +48,10 @@ func _on_labPlay_pressed():
 func _on_labGarage_pressed():
 	currentScene = get_tree().change_scene("res://Scenes/Garage.tscn")
 
+func _on_btnEndless_pressed():
+	Globals.endless = true
+	get_tree().change_scene("res://Scenes/Runway.tscn")
+
 func _on_labSettings_pressed():
 	currentScene = get_tree().change_scene("res://Scenes/Settings.tscn")
 
@@ -70,9 +74,4 @@ func _on_btnHide_pressed():
 	$UI/Buttons/twnButtons.start()
 	# Button text
 	$UI/btnHide.text = "->  " if hidden else "<-  "
-
-
-
-
-
 
