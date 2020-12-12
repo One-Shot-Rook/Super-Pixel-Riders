@@ -6,11 +6,11 @@ INJECTED from C:\Users\Ovidiu\Documents\Godot\Godot Projects\SuperPixelRiders\an
 INJECTED from C:\Users\Ovidiu\Documents\Godot\Godot Projects\SuperPixelRiders\android\build\AndroidManifest.xml:2:1-70:12
 MERGED from [GodotGooglePlayBilling.1.0.0.release.aar] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\f73fc2b1a2dc0ee12e40298f8027d806\GodotGooglePlayBilling.1.0.0.release\AndroidManifest.xml:2:1-17:12
 MERGED from [godot-lib.release.aar] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\94cba374a529e32e15017b9cb1f583e7\godot-lib.release\AndroidManifest.xml:2:1-22:12
+MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:2:1-23:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\72b4d95a0e8b43ee4215c0c4e8b0fb72\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\5debf09d2541e0ccacc6adc6a4fdd105\fragment-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\3a2f8d614676183a411d5d0a5ccffd59\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\0cb8e9b70eb18e6366ea818d50894e47\legacy-support-core-utils-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:2:1-23:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\3ae307e411008a5abe35b795699599f8\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.media:media:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\1d849761628829d2295b320ffc5152e0\media-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\fa1cda0d762347a9cb7d79eaeeb289e8\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -147,6 +147,8 @@ MERGED from [GodotGooglePlayBilling.1.0.0.release.aar] C:\Users\Ovidiu\.gradle\c
 MERGED from [GodotGooglePlayBilling.1.0.0.release.aar] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\f73fc2b1a2dc0ee12e40298f8027d806\GodotGooglePlayBilling.1.0.0.release\AndroidManifest.xml:7:5-9:41
 MERGED from [godot-lib.release.aar] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\94cba374a529e32e15017b9cb1f583e7\godot-lib.release\AndroidManifest.xml:7:5-9:41
 MERGED from [godot-lib.release.aar] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\94cba374a529e32e15017b9cb1f583e7\godot-lib.release\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:6:5-8:41
+MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\72b4d95a0e8b43ee4215c0c4e8b0fb72\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\72b4d95a0e8b43ee4215c0c4e8b0fb72\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\5debf09d2541e0ccacc6adc6a4fdd105\fragment-1.0.0\AndroidManifest.xml:20:5-44
@@ -155,8 +157,6 @@ MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Ovidiu\.grad
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\3a2f8d614676183a411d5d0a5ccffd59\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\0cb8e9b70eb18e6366ea818d50894e47\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\0cb8e9b70eb18e6366ea818d50894e47\legacy-support-core-utils-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:6:5-8:41
-MERGED from [com.android.billingclient:billing:3.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\6c7a3c72f788922831051c0dc21d6409\billing-3.0.0\AndroidManifest.xml:6:5-8:41
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\3ae307e411008a5abe35b795699599f8\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\3ae307e411008a5abe35b795699599f8\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.0.0] C:\Users\Ovidiu\.gradle\caches\transforms-2\files-2.1\1d849761628829d2295b320ffc5152e0\media-1.0.0\AndroidManifest.xml:20:5-44

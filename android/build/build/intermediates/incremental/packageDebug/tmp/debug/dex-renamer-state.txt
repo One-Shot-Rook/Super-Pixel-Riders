@@ -1,4 +1,4 @@
-#Sun Oct 18 19:29:17 CEST 2020
+#Wed Dec 02 21:29:51 CET 2020
 base.0=C\:\\Users\\Ovidiu\\Documents\\Godot\\Godot Projects\\SuperPixelRiders\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
