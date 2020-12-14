@@ -17,6 +17,10 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	spawnCar()
 
+func toggleSound(button_pressed):
+	#print("sound ",button_pressed," ",-10 -70*int(button_pressed))
+	$sndMenu.volume_db = -10 -70*int(button_pressed)
+
 func _on_timerSpawn_timeout():
 	spawnCar()
 
@@ -75,3 +79,7 @@ func _on_btnHide_pressed():
 	# Button text
 	$UI/btnHide.text = "->  " if hidden else "<-  "
 
+
+
+func _on_btnSound_toggled(button_pressed):
+	toggleSound(button_pressed)
