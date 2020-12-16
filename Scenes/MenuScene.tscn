@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ThemeMain.tres" type="Theme" id=1]
 [ext_resource path="res://Assets/Cool Text - Deja-Vu 362357651890889.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/MenuScene.gd" type="Script" id=3]
 [ext_resource path="res://Assets/img_desert.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/texBackground.gd" type="Script" id=5]
+[ext_resource path="res://Assets/Sound.png" type="Texture" id=6]
 [ext_resource path="res://Scripts/texLogo.gd" type="Script" id=7]
 [ext_resource path="res://Assets/Sounds/snd_theme2.wav" type="AudioStream" id=8]
+[ext_resource path="res://Assets/notSound.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 5.9155, 1299.72 )
@@ -184,6 +186,20 @@ shape = SubResource( 2 )
 [node name="shapeBottom" type="CollisionShape2D" parent="bodyBorder"]
 position = Vector2( 0, 1260 )
 shape = SubResource( 2 )
+
+[node name="btnSound" type="TextureButton" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -200.0
+margin_top = -200.0
+toggle_mode = true
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="timeout" from="UI/texLogo/timer" to="UI/texLogo" method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/Buttons/btnPlay" to="." method="_on_labPlay_pressed"]
 [connection signal="pressed" from="UI/Buttons/btnGarage" to="." method="_on_labGarage_pressed"]
@@ -192,3 +208,4 @@ shape = SubResource( 2 )
 [connection signal="pressed" from="UI/Buttons/btnReset" to="." method="_on_labReset_pressed"]
 [connection signal="pressed" from="UI/btnHide" to="." method="_on_btnHide_pressed"]
 [connection signal="timeout" from="timerSpawn" to="." method="_on_timerSpawn_timeout"]
+[connection signal="toggled" from="btnSound" to="." method="_on_btnSound_toggled"]
