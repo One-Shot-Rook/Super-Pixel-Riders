@@ -12,8 +12,9 @@ func _ready():
 			gunNames.append(gunName)
 	rng.randomize()
 	var gunIndex = rng.randi_range(0,gunNames.size()-1)
-	ammoType = gunNames[gunIndex]
-	$texLoot.texture = load("res://Assets/Guns/img_"+ammoType+".png")
+	if !gunNames.empty():
+		ammoType = gunNames[gunIndex]
+		$texLoot.texture = load("res://Assets/Guns/img_"+ammoType+".png")
 
 func _on_timerLoot_timeout():
 	if timeStage:

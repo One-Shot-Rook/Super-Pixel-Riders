@@ -136,16 +136,6 @@ var cars = {
 		"turnRatio":0.3,
 		"slots":4,
 		"mass":100},
-	"raptor":{
-		"displayName": "Raptor",
-		"maxHealth":800,
-		"unlockCost":40000,
-		"engine":	{"levels":[900, 1050, 1100, 1150, 1200, 1250], 	"baseCost":600, 	"mod":1.15},
-		"handling":	{"levels":[5, 5.2, 5.4, 5.6, 5.8, 6], 			"baseCost":625, 	"mod":1.10},
-		"armor":	{"levels":[0, 4, 8, 12, 16, 20], 				"baseCost":650, 	"mod":1.10},
-		"turnRatio":1,
-		"slots":4,
-		"mass":20},
 	"barry":{
 		"displayName": "Barry",
 		"maxHealth":2000,
@@ -205,12 +195,6 @@ var skinNameDict = {
 	},
 	"barry":{
 		"barry":{"costIRL":-1,"costCoins":100},
-	},
-	"raptor":{
-		"raptor":{"costIRL":-1,"costCoins":100},
-		"toxic":{"costIRL":1,"costCoins":100},
-		"angel":{"costIRL":1,"costCoins":100},
-		"midnight":{"costIRL":1,"costCoins":100},
 	},
 	"thomas":{
 		"thomas":{"costIRL":-1,"costCoins":100},
