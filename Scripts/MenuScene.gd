@@ -8,8 +8,8 @@ var currentScene
 var teams = [
 	"toad","virtue","toad","toad","souffle",
 	"virtue","toad","viper","toad","tangerine",
-	"virtue","toad","toad","virtue","cherry",
-	"toad","baron"]
+	"virtue","toad","toad","virtue","grape",
+	"souffle","toad","baron"]
 
 var turn = 0
 var rng = RandomNumberGenerator.new()
@@ -66,7 +66,7 @@ func _on_btnHide_pressed():
 	hidden = not hidden
 	# Logo
 	$UI/twnLogo.interpolate_property(
-		$UI/texLogo, "self_modulate",
+		$UI/texLogo, "modulate",
 		null, Color(1,1,1,1)*int(not hidden), 1,
 		Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	$UI/twnLogo.start()
@@ -83,3 +83,7 @@ func _on_btnHide_pressed():
 
 func _on_btnSound_toggled(button_pressed):
 	toggleSound(button_pressed)
+
+
+func _on_btnLeaderboards_pressed():
+	get_tree().change_scene("res://Scripts/Splash.tscn")

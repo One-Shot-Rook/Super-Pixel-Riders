@@ -1,0 +1,106 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/OSR/ONE.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Splash.gd" type="Script" id=2]
+[ext_resource path="res://Assets/OSR/ROOK.png" type="Texture" id=3]
+[ext_resource path="res://Assets/OSR/SHOT.png" type="Texture" id=4]
+[ext_resource path="res://Assets/OSR/OSR.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/OSR/OneShotRookHit.wav" type="AudioStream" id=6]
+[ext_resource path="res://Assets/OSR/icon.png" type="Texture" id=7]
+
+[node name="Splash" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="colBack" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="texIcon" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 7 )
+stretch_mode = 7
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="texIcon"]
+
+[node name="texONE" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -437.0
+margin_bottom = -145.0
+texture = ExtResource( 1 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="texONE"]
+
+[node name="texSHOT" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -145.0
+margin_bottom = 145.0
+texture = ExtResource( 4 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="texSHOT"]
+
+[node name="texROOK" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = 145.0
+margin_bottom = 437.0
+texture = ExtResource( 3 )
+stretch_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="texROOK"]
+
+[node name="beforeTimer" type="Timer" parent="."]
+wait_time = 0.45
+one_shot = true
+autostart = true
+
+[node name="stageTimer" type="Timer" parent="."]
+wait_time = 0.4
+autostart = true
+
+[node name="afterTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="audioOSR" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -5.0
+pitch_scale = 0.85
+
+[node name="audioHit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -15.0
+[connection signal="timeout" from="beforeTimer" to="." method="_on_beforeTimer_timeout"]
+[connection signal="timeout" from="stageTimer" to="." method="_on_stageTimer_timeout"]
+[connection signal="timeout" from="afterTimer" to="." method="_on_afterTimer_timeout"]

@@ -60,6 +60,18 @@ __meta__ = {
 wait_time = 2.0
 autostart = true
 
+[node name="texShadow" type="TextureRect" parent="UI/texLogo"]
+modulate = Color( 0, 0, 0, 1 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 10.0
+texture = ExtResource( 2 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Buttons" type="Node2D" parent="UI"]
 
 [node name="btnPlay" type="Button" parent="UI/Buttons"]
@@ -108,7 +120,7 @@ margin_left = -50.0
 margin_top = 1536.0
 margin_right = 425.0
 margin_bottom = 1625.0
-text = "Leaderboards"
+text = "Intro"
 align = 2
 __meta__ = {
 "_edit_use_anchors_": false
@@ -204,6 +216,7 @@ __meta__ = {
 [connection signal="pressed" from="UI/Buttons/btnPlay" to="." method="_on_labPlay_pressed"]
 [connection signal="pressed" from="UI/Buttons/btnGarage" to="." method="_on_labGarage_pressed"]
 [connection signal="pressed" from="UI/Buttons/btnEndless" to="." method="_on_btnEndless_pressed"]
+[connection signal="pressed" from="UI/Buttons/btnLeaderboards" to="." method="_on_btnLeaderboards_pressed"]
 [connection signal="pressed" from="UI/Buttons/btnSettings" to="." method="_on_labSettings_pressed"]
 [connection signal="pressed" from="UI/Buttons/btnReset" to="." method="_on_labReset_pressed"]
 [connection signal="pressed" from="UI/btnHide" to="." method="_on_btnHide_pressed"]

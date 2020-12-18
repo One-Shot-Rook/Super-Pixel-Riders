@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/OSR.wav-8f329b5755ca5f37c7f2a84805eefbbc.sample"
+
+[deps]
+
+source_file="res://Assets/OSR/OSR.wav"
+dest_files=[ "res://.import/OSR.wav-8f329b5755ca5f37c7f2a84805eefbbc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

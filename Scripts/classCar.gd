@@ -74,6 +74,7 @@ func handleMovement(delta,_state=""):
 			if "Car" in entityName:
 				carCollision(kinCollisionInfo)
 			elif "Lose" in entityName and isPlayer:
+				Globals.endless = false
 				var _currentScene = get_tree().change_scene("res://Scenes/GameOver.tscn")
 			elif "Loot" in entityName:
 				var ammoType = entity.ammoType

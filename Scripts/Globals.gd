@@ -276,6 +276,17 @@ var enemies = {
 		"pain":6,
 		"gunName":"shotgun",
 	},
+	"grape":{
+		"maxHealth":800,
+		"money":300,
+		"engine":600,
+		"armor":15,
+		"handling":2,
+		"turnRatio":0.9,
+		"mass":30,
+		"pain":6,
+		"gunName":"rifle",
+	},
 	"baron":{
 		"maxHealth":2000,
 		"money":500,
@@ -308,17 +319,6 @@ var enemies = {
 		"mass":25,
 		"pain":3,
 		"gunName":"cannon",
-	},
-	"cherry":{
-		"maxHealth":350,
-		"money":125,
-		"engine":400,
-		"armor":10,
-		"handling":3,
-		"turnRatio":0.7,
-		"mass":25,
-		"pain":3,
-		"gunName":"minigun",
 	},
 }
 
@@ -544,7 +544,7 @@ var teamBits = {
 	"baron":17,
 	"souffle":16,
 	"tangerine":15,
-	"cherry":14,
+	"grape":14,
 }
 
 var projectileBits = {
